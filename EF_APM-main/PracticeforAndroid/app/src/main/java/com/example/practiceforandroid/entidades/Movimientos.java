@@ -7,15 +7,17 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "movimientos")
 public class Movimientos {
     @PrimaryKey(autoGenerate = true)
+    public int codigo;
+    @ColumnInfo(name ="id")
     public int id;
     @ColumnInfo(name ="tipo")
-    public static String tipo;
+    public String tipo;
     @ColumnInfo(name ="motivo")
-    public static String motivo;
+    public String motivo;
     @ColumnInfo(name ="latitud")
-    public static String latitud;
+    public String latitud;
     @ColumnInfo(name ="longitud")
-    public static String longitud;
+    public String longitud;
     @ColumnInfo(name ="url")
-    public static String url;
+    public String url;
 }

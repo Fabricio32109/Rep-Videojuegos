@@ -15,7 +15,7 @@ public interface CuentaDao {
     List<Movimientos>getAll();
 
     @Query("SELECT * FROM movimientos where id = :abc")
-    Movimientos find(int abc); //1,2,3,4,5
+    List<Movimientos> find(int abc); //1,2,3,4,5
 
     @Insert
     void create(Movimientos movimiento);

@@ -86,13 +86,13 @@ public class RegistrarMovimiento extends AppCompatActivity {
 
                 AppDatabase db = AppDatabase.getInstance(RegistrarMovimiento.this);
                 Movimientos movi=new Movimientos();
-                Movimientos.tipo=spTipo.getSelectedItem().toString();
-                Movimientos.motivo=motivo.getText().toString();
-                Movimientos.latitud=latitud.getText().toString();
-                Movimientos.longitud=longitud.getText().toString();
-                Movimientos.url=url.getText().toString();
+                movi.id= cuentaux.id;
+                movi.tipo=spTipo.getSelectedItem().toString();
+                movi.motivo=motivo.getText().toString();
+                movi.latitud=latitud.getText().toString();
+                movi.longitud=longitud.getText().toString();
+                movi.url=url.getText().toString();
                 db.userDao().create(movi);
-
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl("https://635a26bcff3d7bddb9b03cc6.mockapi.io/")
@@ -125,6 +125,7 @@ public class RegistrarMovimiento extends AppCompatActivity {
             }
         });
     }
+
     private void openGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");

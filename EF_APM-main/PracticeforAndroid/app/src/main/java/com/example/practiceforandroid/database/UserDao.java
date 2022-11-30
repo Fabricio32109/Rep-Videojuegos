@@ -19,6 +19,9 @@ public interface UserDao {
     @Query("SELECT * FROM movimientos where id = :abc")
     Movimientos find(int abc); //1,2,3,4,5
 
+    @Query("SELECT * FROM movimientos where id = :abc")
+    List<Movimientos> findporid(int abc); //1,2,3,4,5
+
     @Insert
     void create(Movimientos movs);
 

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.practiceforandroid.ListaMovimientos;
 import com.example.practiceforandroid.PokeMapsActivity;
 import com.example.practiceforandroid.PokeUbicacionActivity;
 import com.example.practiceforandroid.R;
@@ -59,7 +60,6 @@ public class PokemonAdapter extends RecyclerView.Adapter{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(holder.itemView.getContext(), RegistrarMovimiento.class);
-                //Nota enviar la cuenta con el intent
                 intent.putExtra("id",datos.get(aux).id);
                 intent.putExtra("name",datos.get(aux).name);
                 intent.putExtra("saldo",datos.get(aux).saldo);
@@ -71,7 +71,13 @@ public class PokemonAdapter extends RecyclerView.Adapter{
         viewHolder.btnUbicacion2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(holder.itemView.getContext(), ListaMovimientos.class);
+                //Nota enviar la cuenta con el intent
+                intent.putExtra("id",datos.get(aux).id);
+                intent.putExtra("name",datos.get(aux).name);
+                intent.putExtra("saldo",datos.get(aux).saldo);
+                Log.i("MAIN_APP", "Antes de intent" );
+                holder.itemView.getContext().startActivity(intent);
             }
         });
         button3=holder.itemView.findViewById(R.id.btnUbicacion3);

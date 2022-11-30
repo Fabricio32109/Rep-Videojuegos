@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.practiceforandroid.entidades.Movimientos;
 
-@Database(entities = {Movimientos.class}, version = 1)
+@Database(entities = {Movimientos.class}, version = 5)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
 
